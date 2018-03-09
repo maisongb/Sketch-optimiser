@@ -1,0 +1,20 @@
+// locate the Sketch folder including the SKetch file (ideally you want to have only one Sketch file in this folder, otherwise it becomes messy)
+cd 
+
+// unzip the sketch file (I usually drag the file from Finder into Terminal)
+unzip xxx.sketch
+
+// locate the images folder (it's a subfolder)
+cd
+
+// create a folder called 'jpegs', compress all original png images into jpeg with a percentage compression
+mkdir jpegs; sips -s format jpeg -s formatOptions 30 *.* --out jpegs
+
+// rename all new jpeg into png (otherwise Sketch won't understand jpg)
+for file in *.jpg; do mv "$file" "${file%.jpg}.png"; done
+
+// replace all the new images inside the images folder (you want to delete the jpeg folder and all its content, so you have the same original structure)
+manual drag and drop through finder
+
+// zip the Sketch package with all assets and a custom file name (ex. xxx)
+zip -r xxx.sketch images previews pages document.json meta.json user.json
