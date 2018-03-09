@@ -2,7 +2,7 @@
 cd 
 
 // unzip the sketch file (I usually drag the file from Finder into Terminal)
-unzip xxx.sketch
+unzip [filename]
 
 // locate the images folder (it's a subfolder)
 cd
